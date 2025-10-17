@@ -6,3 +6,13 @@ This repository is Configuring Production Ready EKS Clusters with Terraform and 
 ## 📋 Project Overview
 
 This guide will walk through creating a a secure, private **Production-ready Amazon EKS (Elastic Kubernetes Service) cluster** using Terraform. Unlike basic public clusters, we'll build a **private, secure cluster** with modular, reusable configuration, proper networking, IAM roles, and security configurations.
+
+### 🎯 What You'll Build
+- **Private EKS Cluster** (not publicly accessible)
+- **Secure network and Multi-AZ VPC** with public and private subnets across 3 availability zones
+- **Proper IAM roles, Security groups and policies**
+- **Cost-optimized node groups** (both on-demand and spot instances)
+- **Security groups** for controlled access
+- **Essential AWS-EKS add-ons** (CNI, CoreDNS, EBS CSI driver)
+
+---
