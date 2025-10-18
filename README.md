@@ -24,3 +24,16 @@ This guide will walk through creating a a secure, private **Production-ready Ama
 2. **AWS CLI**
 3. **kubectl** (Kubernetes command-line tool)
 4. **AWS Account** with appropriate permissions
+
+### Installation Steps
+
+#### 1. Install AWS CLI
+```bash
+# On Linux
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Verify installation
+aws --version
+```
