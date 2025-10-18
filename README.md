@@ -16,3 +16,11 @@ This guide will walk through creating a a secure, private **Production-ready Ama
 - **Essential AWS-EKS add-ons** (CNI, CoreDNS, EBS CSI driver)
 
 ---
+
+## 🛠 Prerequisites & Tools Setup
+
+### Required Tools
+1. **Terraform** (version 1.9.3 or later)
+2. **AWS CLI**
+3. **kubectl** (Kubernetes command-line tool)
+4. **AWS Account** with appropriate permissions
