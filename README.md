@@ -65,3 +65,13 @@ kubectl version --client
 - Go to AWS IAM Console → Users → Create User
 - Attach necessary policies (AdministratorAccess for learning, more restricted for production)
 - **Note**: For production, use least-privilege principles
+
+#### 2. Configure AWS Credentials
+```bash
+aws configure
+```
+Enter your:
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default region (e.g., `us-east-1`)
+- Default output format (e.g., `json`)
