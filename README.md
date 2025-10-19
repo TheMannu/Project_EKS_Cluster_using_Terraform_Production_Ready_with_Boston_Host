@@ -58,3 +58,10 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Verify installation
 kubectl version --client
 ```
+
+### AWS Configuration
+
+#### 1. Create IAM User with Appropriate Permissions
+- Go to AWS IAM Console → Users → Create User
+- Attach necessary policies (AdministratorAccess for learning, more restricted for production)
+- **Note**: For production, use least-privilege principles
