@@ -118,3 +118,16 @@ terraform {
       version = "~> 5.49.0"
     }
   }
+
+  backend "s3" {
+    bucket = "your-terraform-state-bucket"
+    key    = "eks/terraform.tfstate"
+    region = "us-east-1"
+    use_lock_file = true
+  }
+}
+
+provider "aws" {
+  region = var.region
+}
+```
