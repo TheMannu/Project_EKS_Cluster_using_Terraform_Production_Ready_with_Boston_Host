@@ -83,3 +83,23 @@ Enter your:
 ```bash
 aws sts get-caller-identity
 ```
+---
+## 🏗 Project Structure
+
+Create the following directory structure:
+```
+eks-project/
+├── modules/
+│   ├── vpc.tf
+│   ├── iam.tf
+│   ├── eks.tf
+│   └── data.tf
+├── eks/
+|   ├── main.tf            # use the module
+|   ├── variables.tf       # declarations
+|   ├── dev.tfvars         # YOUR values
+|   ├── backend.tf         # remote state lock
+|   └── README.md         
+```
+
+---
