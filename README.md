@@ -103,3 +103,18 @@ eks-project/
 ```
 
 ---
+
+## 📝 Step-by-Step Implementation
+
+### Step 1: Create Backend Configuration (`backend.tf`)
+
+```hcl
+terraform {
+  required_version = ">= 1.12.0"
+  
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.49.0"
+    }
+  }
