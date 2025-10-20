@@ -11,9 +11,12 @@ This guide will walk through creating a a secure, private **Production-ready Ama
 - **Private EKS Cluster** (not publicly accessible)
 - **Secure network and Multi-AZ VPC** with public and private subnets across 3 availability zones
 - **Proper IAM roles, Security groups and policies**
-- **Cost-optimized node groups** (both on-demand and spot instances)
+- **Cost-optimized node groups** A mix of **On-Demand** and **Spot Instance** node groups.
 - **Security groups** for controlled access
 - **Essential AWS-EKS add-ons** (CNI, CoreDNS, EBS CSI driver)
+- **Infrastructure as Code (IaC):** Entirely built using **Terraform** with a **modular structure** for reusability.
+- **Secure Access:** Cluster access is restricted via a ** Security Group** to a designated **Jump Server (Bastion Host)**
+
 
 ---
 
