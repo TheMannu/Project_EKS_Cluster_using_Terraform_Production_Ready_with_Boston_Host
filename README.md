@@ -78,3 +78,8 @@ Enter your:
 - AWS Secret Access Key
 - Default region (e.g., `us-east-1`)
 - Default output format (e.g., `json`)
+
+#### 3. Verify AWS Configuration
+```bash
+aws sts get-caller-identity
+```
