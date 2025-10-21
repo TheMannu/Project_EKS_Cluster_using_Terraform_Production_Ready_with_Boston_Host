@@ -177,3 +177,15 @@ resource "aws_subnet" "public" {
   
   depends_on = [aws_vpc.main]
 }
+
+# Private Subnets
+resource "aws_subnet" "private" {
+  count             = var.private_subnet_count
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = element(var.private_subnet_cidr_blocks, count.index)
+  availability_zone = element(var.availability_zones, count.index)
+  
+  tags = {
+    Name = "${var.prefix}-private-subnet-${count.index}"
+  }
+}
