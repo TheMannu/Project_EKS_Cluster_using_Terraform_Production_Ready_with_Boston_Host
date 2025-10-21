@@ -142,3 +142,15 @@ This module creates the networking layer foundation:
 *   **Public & Private Subnets:** Creates them in multiple AZs.
 *   **Route Tables:** Configures routes for public (via IGW) and private (via NAT Gateway) subnets.
 *   **EKS Cluster Security Group:** Restricts access to the EKS API server (port 443) to only the Jump Server's IP or the VPC CIDR.
+
+```hcl
+# VPC
+resource "aws_vpc" "main" {
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+  
+  tags = {
+    Name = "${var.prefix}-vpc"
+  }
+}
