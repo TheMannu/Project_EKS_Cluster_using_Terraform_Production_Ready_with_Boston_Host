@@ -131,3 +131,14 @@ provider "aws" {
   region = var.region
 }
 ```
+
+### Step 2: Create VPC Module (`modules/vpc.tf`)
+
+This module creates the networking layer foundation:
+
+*   **VPC:** The isolated network cloud.
+*   **Internet Gateway (IGW):** Provides internet access to resources in public subnets.
+*   **NAT Gateway + Elastic IP:** Allows resources in *private* subnets (like worker nodes) to access the internet (e.g., to pull Docker images) while remaining private.
+*   **Public & Private Subnets:** Creates them in multiple AZs.
+*   **Route Tables:** Configures routes for public (via IGW) and private (via NAT Gateway) subnets.
+*   **EKS Cluster Security Group:** Restricts access to the EKS API server (port 443) to only the Jump Server's IP or the VPC CIDR.
