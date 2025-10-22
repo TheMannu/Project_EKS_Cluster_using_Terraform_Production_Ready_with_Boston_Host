@@ -214,3 +214,17 @@ resource "aws_subnet" "private" {
     Name = "${var.prefix}-private-subnet-${count.index}"
   }
 }
+
+# NAT Gateway and Elastic IP
+resource "aws_eip" "nat" {
+  domain = "vpc"
+}
+
+resource "aws_nat_gateway" "main" {
+  allocation_id = aws_eip.nat.id
+  subnet_id     = aws_subnet.public[0].id
+  
+  tags = {
+    Name = "${var.prefix}-nat-gw"
+  }
+}
