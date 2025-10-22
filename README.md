@@ -17,6 +17,11 @@ This guide will walk through creating a a secure, private **Production-ready Ama
 - **Infrastructure as Code (IaC):** Entirely built using **Terraform** with a **modular structure** for reusability.
 - **Secure Access:** Cluster access is restricted via a ** Security Group** to a designated **Jump Server (Bastion Host)**
 
+---
+
+| What you get at the end | What you pay (if you clean up) |
+|-------------------------|--------------------------------|
+| 1 VPC, 3 AZs, 6 subnets, 1 private EKS, 2 managed node-groups (on-demand + spot), all add-ons, S3 remote state | ≈ 0.50 USD for 1 h |
 
 ---
 
