@@ -70,9 +70,13 @@ kubectl version --client
 ### AWS Configuration
 
 #### 1. Create IAM User with Appropriate Permissions
-- Go to AWS IAM Console → Users → Create User
+- Go to AWS Console → IAM → Users → **Add users**
+  Name: `eks-admin`
 - Attach necessary policies (AdministratorAccess for learning, more restricted for production)
+  Permission: **PowerUserAccess** (or `AdministratorAccess` on your private account) 
 - **Note**: For production, use least-privilege principles
+- **Security credentials → Create access key**  
+  Save the two strings (`AKIA…` & `…secret…`) – you get them **only once**.
 
 #### 2. Configure AWS Credentials
 ```bash
