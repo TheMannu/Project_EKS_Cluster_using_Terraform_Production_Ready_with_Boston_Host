@@ -92,7 +92,23 @@ Enter your:
 ```bash
 aws sts get-caller-identity
 ```
+
+
+#### 4.Create the S3 Bucket for State
+Terraform must remember what it built; we store that memory in S3.
+
+```bash
+# bucket names are GLOBAL – pick a unique one
+aws s3 mb s3://my-eks-terraform-state-12345 --region us-east-1
+# turn on versioning (cheap insurance)
+aws s3api put-bucket-versioning --bucket my-eks-terraform-state-12345 \
+      --versioning-configuration Status=Enabled
+```
+
+Edit `backend.tf` and replace the bucket name with yours.
+
 ---
+
 ## 🏗 Project Structure
 
 Create the following directory structure:
