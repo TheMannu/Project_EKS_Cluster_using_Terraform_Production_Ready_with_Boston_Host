@@ -280,3 +280,12 @@ resource "aws_security_group" "eks" {
   }
 }
 ```
+
+### Step 3: Create IAM Module (`modules/iam.tf`)
+
+This module Manages permissions, identities and roles:
+
+*   **EKS Cluster Role:** Grants the EKS service permissions to manage resources on your behalf.
+*   **Node Group Role:** Grants permissions to the worker nodes (EC2 instances) to interact with AWS services like ECR and EBS.
+*   **Policies:** Attaches necessary policies like `AmazonEKSWorkerNodePolicy`, `AmazonEKS_CNI_Policy`, and `AmazonEC2ContainerRegistryReadOnly`.
+*   **OpenID Connect (OIDC) Provider:** Enables IAM Roles for Service Accounts (IRSA), allowing Kubernetes pods to securely call AWS APIs.
