@@ -256,3 +256,15 @@ resource "aws_route_table" "private" {
   }
 }
 
+# Security Group for EKS
+resource "aws_security_group" "eks" {
+  name_prefix = "${var.prefix}-eks-sg"
+  vpc_id      = aws_vpc.main.id
+  
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [var.vpc_cidr_block] # Restrict to VPC only
+  }
+  
