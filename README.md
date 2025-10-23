@@ -289,3 +289,27 @@ This module Manages permissions, identities and roles:
 *   **Node Group Role:** Grants permissions to the worker nodes (EC2 instances) to interact with AWS services like ECR and EBS.
 *   **Policies:** Attaches necessary policies like `AmazonEKSWorkerNodePolicy`, `AmazonEKS_CNI_Policy`, and `AmazonEC2ContainerRegistryReadOnly`.
 *   **OpenID Connect (OIDC) Provider:** Enables IAM Roles for Service Accounts (IRSA), allowing Kubernetes pods to securely call AWS APIs.
+
+```hcl
+# Random suffix for unique names
+resource "random_integer" "suffix" {
+  min = 10000
+  max = 99999
+}
+
+# EKS Cluster Role
+resource "aws_iam_role" "eks_cluster" {
+  count = var.cluster_enabled ? 1 : 0
+  name  = "${var.prefix}-eks-cluster-role-${random_integer.suffix.result}"
+  
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+        Service = "eks.amazonaws.com"
+      }
+    }]
+    Version = "2012-10-17"
+  })
+}
