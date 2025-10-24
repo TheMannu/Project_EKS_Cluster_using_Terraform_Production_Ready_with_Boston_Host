@@ -350,3 +350,15 @@ resource "aws_iam_role_policy_attachment" "node_group" {
   role       = aws_iam_role.node_group[0].name
 }
 ```
+
+### Step 4: Create EKS Cluster Module (`modules/eks.tf`)
+
+This module creates the Kubernetes cluster and node groups:
+The core component that creates and configures the Kubernetes cluster.
+*   **EKS Cluster Resource:** Defines the cluster with its version, VPC/Subnet placement, and security settings (private endpoint, public endpoint disabled).
+*   **Node Groups:** Creates managed node groups for both On-Demand and Spot instances, specifying instance types, scaling limits, and labels.
+*   **Add-ons:** Automatically installs essential Kubernetes add-ons like:
+    *   `vpc-cni`: For networking.
+    *   `coredns`: For service discovery.
+    *   `kube-proxy`: For network proxy.
+    *   `aws-ebs-csi-driver`: For dynamic volume provisioning.
