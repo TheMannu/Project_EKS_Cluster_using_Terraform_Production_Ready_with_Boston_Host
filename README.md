@@ -313,3 +313,10 @@ resource "aws_iam_role" "eks_cluster" {
     Version = "2012-10-17"
   })
 }
+
+# Attach EKS Cluster Policy
+resource "aws_iam_role_policy_attachment" "eks_cluster" {
+  count      = var.cluster_enabled ? 1 : 0
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+  role       = aws_iam_role.eks_cluster[0].name
+}
