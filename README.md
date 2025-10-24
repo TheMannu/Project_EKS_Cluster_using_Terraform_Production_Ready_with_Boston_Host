@@ -362,3 +362,23 @@ The core component that creates and configures the Kubernetes cluster.
     *   `coredns`: For service discovery.
     *   `kube-proxy`: For network proxy.
     *   `aws-ebs-csi-driver`: For dynamic volume provisioning.
+
+```hcl
+# EKS Cluster
+resource "aws_eks_cluster" "main" {
+  count    = var.cluster_enabled ? 1 : 0
+  name     = var.cluster_name
+  role_arn = aws_iam_role.eks_cluster[0].arn
+  version  = var.cluster_version
+  
+  vpc_config {
+    subnet_ids              = aws_subnet.private[*].id
+    endpoint_private_access = true
+    endpoint_public_access  = false
+    security_group_ids      = [aws_security_group.eks.id]
+  }
+  
+  depends_on = [
+    aws_iam_role_policy_attachment.eks_cluster
+  ]
+}
