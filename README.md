@@ -320,3 +320,20 @@ resource "aws_iam_role_policy_attachment" "eks_cluster" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.eks_cluster[0].name
 }
+
+# Node Group Role
+resource "aws_iam_role" "node_group" {
+  count = var.node_group_enabled ? 1 : 0
+  name  = "${var.prefix}-node-group-role-${random_integer.suffix.result}"
+  
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+        Service = "ec2.amazonaws.com"
+      }
+    }]
+    Version = "2012-10-17"
+  })
+}
