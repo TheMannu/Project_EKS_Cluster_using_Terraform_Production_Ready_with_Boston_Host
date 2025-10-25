@@ -382,3 +382,11 @@ resource "aws_eks_cluster" "main" {
     aws_iam_role_policy_attachment.eks_cluster
   ]
 }
+
+# OpenID Connect Provider
+resource "aws_iam_openid_connect_provider" "main" {
+  count           = var.cluster_enabled ? 1 : 0
+  client_id_list  = ["sts.amazonaws.com"]
+  thumbprint_list = [data.tls_certificate.cluster[0].certificates[0].sha1_fingerprint]
+  url             = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
+}
