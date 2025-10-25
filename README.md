@@ -412,3 +412,13 @@ resource "aws_eks_node_group" "on_demand" {
   capacity_type  = "ON_DEMAND"
   instance_types = var.on_demand_instance_types
   
+  scaling_config {
+    desired_size = var.on_demand_desired_size
+    max_size     = var.on_demand_max_size
+    min_size     = var.on_demand_min_size
+  }
+  
+  update_config {
+    max_unavailable = 1
+  }
+  
