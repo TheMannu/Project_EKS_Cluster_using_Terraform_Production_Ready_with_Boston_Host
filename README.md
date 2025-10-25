@@ -400,3 +400,15 @@ resource "aws_eks_addon" "main" {
   
   depends_on = [aws_eks_cluster.main]
 }
+
+# On-Demand Node Group
+resource "aws_eks_node_group" "on_demand" {
+  count           = var.on_demand_node_group_enabled ? 1 : 0
+  cluster_name    = aws_eks_cluster.main[0].name
+  node_group_name = "${var.cluster_name}-on-demand"
+  node_role_arn   = aws_iam_role.node_group[0].arn
+  subnet_ids      = aws_subnet.private[*].id
+  
+  capacity_type  = "ON_DEMAND"
+  instance_types = var.on_demand_instance_types
+  
