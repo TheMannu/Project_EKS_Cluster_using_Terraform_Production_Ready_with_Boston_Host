@@ -422,3 +422,11 @@ resource "aws_eks_node_group" "on_demand" {
     max_unavailable = 1
   }
   
+  labels = {
+    "node-type" = "on-demand"
+  }
+  
+  depends_on = [
+    aws_iam_role_policy_attachment.node_group
+  ]
+}
