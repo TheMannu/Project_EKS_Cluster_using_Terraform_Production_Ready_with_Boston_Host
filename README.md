@@ -390,3 +390,13 @@ resource "aws_iam_openid_connect_provider" "main" {
   thumbprint_list = [data.tls_certificate.cluster[0].certificates[0].sha1_fingerprint]
   url             = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
 }
+
+# EKS Add-ons
+resource "aws_eks_addon" "main" {
+  for_each          = var.cluster_enabled ? { for addon in var.addons : addon.name => addon } : {}
+  cluster_name      = aws_eks_cluster.main[0].name
+  addon_name        = each.value.name
+  addon_version     = each.value.version
+  
+  depends_on = [aws_eks_cluster.main]
+}
