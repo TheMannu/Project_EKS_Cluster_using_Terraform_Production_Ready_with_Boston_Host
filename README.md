@@ -448,3 +448,12 @@ resource "aws_eks_node_group" "spot" {
     min_size     = var.spot_min_size
   }
   
+  update_config {
+    max_unavailable = 1
+  }
+  
+  labels = {
+    "node-type" = "spot"
+  }
+}
+```
