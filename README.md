@@ -481,3 +481,10 @@ data "aws_iam_policy_document" "oidc_assume_role_policy" {
       values   = ["system:serviceaccount:kube-system:ebs-csi-controller-sa"]
     }
     
+    principals {
+      identifiers = [aws_iam_openid_connect_provider.main[0].arn]
+      type        = "Federated"
+    }
+  }
+}
+```
