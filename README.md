@@ -430,3 +430,21 @@ resource "aws_eks_node_group" "on_demand" {
     aws_iam_role_policy_attachment.node_group
   ]
 }
+
+# Spot Node Group
+resource "aws_eks_node_group" "spot" {
+  count           = var.spot_node_group_enabled ? 1 : 0
+  cluster_name    = aws_eks_cluster.main[0].name
+  node_group_name = "${var.cluster_name}-spot"
+  node_role_arn   = aws_iam_role.node_group[0].arn
+  subnet_ids      = aws_subnet.private[*].id
+  
+  capacity_type  = "SPOT"
+  instance_types = var.spot_instance_types
+  
+  scaling_config {
+    desired_size = var.spot_desired_size
+    max_size     = var.spot_max_size
+    min_size     = var.spot_min_size
+  }
+  
