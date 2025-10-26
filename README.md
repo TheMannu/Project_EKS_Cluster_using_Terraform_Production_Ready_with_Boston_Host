@@ -466,3 +466,18 @@ data "tls_certificate" "cluster" {
   count   = var.cluster_enabled ? 1 : 0
   url     = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
 }
+
+# IAM Policy Document for OIDC
+data "aws_iam_policy_document" "oidc_assume_role_policy" {
+  count = var.cluster_enabled ? 1 : 0
+  
+  statement {
+    actions = ["sts:AssumeRoleWithWebIdentity"]
+    effect  = "Allow"
+    
+    condition {
+      test     = "StringEquals"
+      variable = "${replace(aws_eks_cluster.main[0].identity[0].oidc[0].issuer, "https://", "")}:sub"
+      values   = ["system:serviceaccount:kube-system:ebs-csi-controller-sa"]
+    }
+    
