@@ -457,3 +457,12 @@ resource "aws_eks_node_group" "spot" {
   }
 }
 ```
+
+### Step 5: Create Data Sources (`modules/data.tf`)
+
+```hcl
+# TLS Certificate for OIDC
+data "tls_certificate" "cluster" {
+  count   = var.cluster_enabled ? 1 : 0
+  url     = aws_eks_cluster.main[0].identity[0].oidc[0].issuer
+}
