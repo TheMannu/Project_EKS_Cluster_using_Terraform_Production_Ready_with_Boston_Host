@@ -513,3 +513,10 @@ module "eks_cluster" {
   public_subnet_cidr_blocks = var.public_subnet_cidr_blocks
   private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
   
+  # EKS Configuration
+  cluster_enabled    = var.cluster_enabled
+  cluster_name       = var.cluster_name
+  cluster_version    = var.cluster_version
+  endpoint_private_access = var.endpoint_private_access
+  endpoint_public_access  = var.endpoint_public_access
+  
