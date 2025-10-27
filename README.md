@@ -520,3 +520,16 @@ module "eks_cluster" {
   endpoint_private_access = var.endpoint_private_access
   endpoint_public_access  = var.endpoint_public_access
   
+  # Node Group Configuration
+  node_group_enabled        = var.node_group_enabled
+  on_demand_node_group_enabled = var.on_demand_node_group_enabled
+  spot_node_group_enabled   = var.spot_node_group_enabled
+  on_demand_instance_types  = var.on_demand_instance_types
+  spot_instance_types       = var.spot_instance_types
+  on_demand_desired_size    = var.on_demand_desired_size
+  on_demand_max_size        = var.on_demand_max_size
+  on_demand_min_size        = var.on_demand_min_size
+  spot_desired_size         = var.spot_desired_size
+  spot_max_size             = var.spot_max_size
+  spot_min_size             = var.spot_min_size
+  
