@@ -488,3 +488,20 @@ data "aws_iam_policy_document" "oidc_assume_role_policy" {
   }
 }
 ```
+
+### Step 6: Create Main Configuration (`main.tf`)
+*   `main.tf`: Calls the modules and passes in variables.
+
+```hcl
+locals {
+  prefix = "dev-eks"
+}
+
+module "eks_cluster" {
+  source = "./modules"
+  
+  # Basic Configuration
+  prefix        = local.prefix
+  environment   = "dev"
+  region        = var.region
+  
