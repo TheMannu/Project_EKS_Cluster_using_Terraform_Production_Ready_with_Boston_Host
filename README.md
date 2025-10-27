@@ -533,3 +533,7 @@ module "eks_cluster" {
   spot_max_size             = var.spot_max_size
   spot_min_size             = var.spot_min_size
   
+  # Add-ons
+  addons = var.addons
+}
+```
