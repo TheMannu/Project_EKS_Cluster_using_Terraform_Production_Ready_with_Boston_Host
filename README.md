@@ -505,3 +505,11 @@ module "eks_cluster" {
   environment   = "dev"
   region        = var.region
   
+  # VPC Configuration
+  vpc_cidr_block            = var.vpc_cidr_block
+  public_subnet_count       = var.public_subnet_count
+  private_subnet_count      = var.private_subnet_count
+  availability_zones        = var.availability_zones
+  public_subnet_cidr_blocks = var.public_subnet_cidr_blocks
+  private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
+  
