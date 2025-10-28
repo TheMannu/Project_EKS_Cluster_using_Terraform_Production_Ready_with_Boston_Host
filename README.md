@@ -551,3 +551,8 @@ variable "vpc_cidr_block" {
   description = "CIDR block for VPC"
   type        = string
 }
+
+variable "public_subnet_count" {
+  description = "Number of public subnets"
+  type        = number
+}
