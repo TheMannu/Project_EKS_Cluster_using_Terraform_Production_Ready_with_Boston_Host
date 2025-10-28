@@ -537,3 +537,12 @@ module "eks_cluster" {
   addons = var.addons
 }
 ```
+
+### Step 7: Define Variables (`variables.tf`)
+*   `variables.tf`: Declares all input variables.
+
+```hcl
+variable "region" {
+  description = "AWS region"
+  type        = string
+}
