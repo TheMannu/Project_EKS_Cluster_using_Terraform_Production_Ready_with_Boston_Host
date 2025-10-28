@@ -556,3 +556,8 @@ variable "public_subnet_count" {
   description = "Number of public subnets"
   type        = number
 }
+
+variable "private_subnet_count" {
+  description = "Number of private subnets"
+  type        = number
+}
