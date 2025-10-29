@@ -629,3 +629,11 @@ spot_instance_types = [
   "c5.large",
   "c5a.large"
 ]
+
+on_demand_desired_size = 1
+on_demand_min_size     = 1
+on_demand_max_size     = 5
+
+spot_desired_size = 2
+spot_min_size     = 1
+spot_max_size     = 10
