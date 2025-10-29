@@ -606,3 +606,11 @@ private_subnet_cidr_blocks = [
   "10.16.32.0/20",
   "10.16.48.0/20"
 ]
+
+# EKS Cluster
+cluster_enabled = true
+cluster_name    = "dev-eks-cluster"
+cluster_version = "1.28"
+
+endpoint_private_access = true
+endpoint_public_access  = false
