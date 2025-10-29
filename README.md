@@ -614,3 +614,18 @@ cluster_version = "1.28"
 
 endpoint_private_access = true
 endpoint_public_access  = false
+
+# Node Groups
+node_group_enabled = true
+on_demand_node_group_enabled = true
+spot_node_group_enabled = true
+
+on_demand_instance_types = ["t3.medium"]
+spot_instance_types = [
+  "t3.medium",
+  "t3a.medium",
+  "m5.large",
+  "m5a.large",
+  "c5.large",
+  "c5a.large"
+]
