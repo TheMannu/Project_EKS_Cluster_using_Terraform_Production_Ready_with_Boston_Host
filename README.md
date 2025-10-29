@@ -587,3 +587,22 @@ variable "cluster_version" {
 # Environment
 environment = "dev"
 region      = "us-east-1"
+
+# VPC Configuration
+vpc_cidr_block = "10.16.0.0/16"
+public_subnet_count = 3
+private_subnet_count = 3
+
+availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+
+public_subnet_cidr_blocks = [
+  "10.16.1.0/20",
+  "10.16.2.0/20",
+  "10.16.3.0/20"
+]
+
+private_subnet_cidr_blocks = [
+  "10.16.16.0/20",
+  "10.16.32.0/20",
+  "10.16.48.0/20"
+]
