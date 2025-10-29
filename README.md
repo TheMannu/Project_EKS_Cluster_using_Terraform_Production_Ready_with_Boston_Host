@@ -579,3 +579,11 @@ variable "cluster_version" {
 
 # ... more variables for instance types, scaling, etc.
 ```
+
+### Step 8: Create Environment Configuration (`dev.tfvars`)
+*   `dev.tfvars`: Provides the actual values for the variables (environment-specific configuration).
+
+```hcl
+# Environment
+environment = "dev"
+region      = "us-east-1"
