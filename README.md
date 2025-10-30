@@ -658,3 +658,13 @@ addons = [
   }
 ]
 ```
+
+---
+
+## 🚀 Deployment Steps
+
+### 1. Initialize Terraform
+```bash
+cd eks-project
+terraform init
+```
