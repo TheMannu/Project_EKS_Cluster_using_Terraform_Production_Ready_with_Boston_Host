@@ -668,3 +668,8 @@ addons = [
 cd eks-project
 terraform init
 ```
+
+### 2. Plan the Infrastructure
+```bash
+terraform plan -var-file="dev.tfvars"
+```
