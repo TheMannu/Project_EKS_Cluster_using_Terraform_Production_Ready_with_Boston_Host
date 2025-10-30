@@ -682,3 +682,12 @@ terraform apply -var-file="dev.tfvars" -auto-approve
 **⏰ This will take 15-20 minutes to complete**
 
 ---
+
+### Step 4: Verify Resources
+
+Check created resources in AWS Console:
+- **EKS**: Verify cluster is created and status is "ACTIVE"
+- **EC2**: Check worker nodes are running
+- **VPC**: Verify networking components
+- **IAM**: Confirm roles and policies
+
