@@ -673,3 +673,12 @@ terraform init
 ```bash
 terraform plan -var-file="dev.tfvars"
 ```
+
+### 3. Apply the Configuration
+```bash
+terraform apply -var-file="dev.tfvars" -auto-approve
+```
+
+**⏰ This will take 15-20 minutes to complete**
+
+---
