@@ -637,3 +637,24 @@ on_demand_max_size     = 5
 spot_desired_size = 2
 spot_min_size     = 1
 spot_max_size     = 10
+
+# Add-ons
+addons = [
+  {
+    name    = "vpc-cni"
+    version = "1.15.4"
+  },
+  {
+    name    = "coredns"
+    version = "1.12.2"
+  },
+  {
+    name    = "kube-proxy"
+    version = "1.28.1"
+  },
+  {
+    name    = "aws-ebs-csi-driver"
+    version = "1.26.1"
+  }
+]
+```
