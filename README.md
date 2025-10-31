@@ -695,3 +695,15 @@ Check created resources in AWS Console:
 ## 🔐 Accessing the Private Cluster
 
 Since this is a **private cluster**, you need a jump server or a bastion host to access it inside the VPC:
+
+### Create a Jump Server
+
+1. **Launch an EC2 instance** in one of the public subnets
+  - AMI: Amazon Linux 2023
+  - Instance type: t2.micro
+  - Subnet: Use one of the public subnets
+  - Security Group: Allow SSH (port 22)
+  - IAM Role: Attach IAM role with `AmazonSSMManagedInstanceCore` for easier access
+
+Wait until “2/2 status checks passed” →  
+AWS console → Session Manager → **Connect** – no SSH keys needed.
