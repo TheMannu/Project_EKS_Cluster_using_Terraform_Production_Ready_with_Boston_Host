@@ -691,3 +691,7 @@ Check created resources in AWS Console:
 - **VPC**: Verify networking components
 - **IAM**: Confirm roles and policies
 
+
+## 🔐 Accessing the Private Cluster
+
+Since this is a **private cluster**, you need a jump server or a bastion host to access it inside the VPC:
