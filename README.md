@@ -707,3 +707,11 @@ Since this is a **private cluster**, you need a jump server or a bastion host to
 
 Wait until “2/2 status checks passed” →  
 AWS console → Session Manager → **Connect** – no SSH keys needed.
+
+2. **Install required tools**:
+
+```bash
+# Install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
