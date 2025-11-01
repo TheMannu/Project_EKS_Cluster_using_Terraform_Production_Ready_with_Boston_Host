@@ -737,3 +737,11 @@ kubectl get pods -A
 You should see 2 nodes (1 on-demand, 1 spot).
 
 ---
+
+## 🧹 Cleanup
+
+To avoid ongoing costs, destroy all resources:
+
+```bash
+terraform destroy -var-file="dev.tfvars" -auto-approve
+```
