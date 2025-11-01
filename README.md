@@ -723,3 +723,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Configure AWS credentials
 aws configure
 ```
+
+### Access the EKS Cluster
+
+```bash
+# Update kubeconfig
+aws eks update-kubeconfig --region us-east-1 --name dev-eks-cluster
