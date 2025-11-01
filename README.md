@@ -753,3 +753,10 @@ Also manually delete:
 
 When the command finishes the console shows **0 resources**.
 ---
+
+## 🛡️ Security Implemented
+
+1. **Private Cluster**: API server not publicly accessible
+2. **Network Isolation**: Public and Private subnets for worker nodes
+3. **IAM Roles**: Least Privilege or Specific policies for each role
+4. **Security Groups**: Restrict ingress/egress traffic rules to necessary ports only
