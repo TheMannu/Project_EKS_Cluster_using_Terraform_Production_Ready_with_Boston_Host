@@ -729,3 +729,11 @@ aws configure
 ```bash
 # Update kubeconfig
 aws eks update-kubeconfig --region us-east-1 --name dev-eks-cluster
+
+# Verify access
+kubectl get nodes
+kubectl get pods -A
+```
+You should see 2 nodes (1 on-demand, 1 spot).
+
+---
