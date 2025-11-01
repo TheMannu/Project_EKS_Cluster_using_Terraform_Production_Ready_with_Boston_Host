@@ -745,3 +745,11 @@ To avoid ongoing costs, destroy all resources:
 ```bash
 terraform destroy -var-file="dev.tfvars" -auto-approve
 ```
+
+Also manually delete:
+- Any EC2 jump servers
+- CloudWatch log groups
+- Any S3 buckets created
+
+When the command finishes the console shows **0 resources**.
+---
