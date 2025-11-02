@@ -778,3 +778,8 @@ When the command finishes the console shows **0 resources**.
 5.  **State Management:** Using an S3 backend for Terraform state is essential for any team or production use case.
 
 ---
+
+### Useful Commands:
+```bash
+# Check cluster status
+aws eks describe-cluster --name dev-eks-cluster --region us-east-1
