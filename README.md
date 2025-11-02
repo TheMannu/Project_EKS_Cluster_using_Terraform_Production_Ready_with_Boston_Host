@@ -783,3 +783,6 @@ When the command finishes the console shows **0 resources**.
 ```bash
 # Check cluster status
 aws eks describe-cluster --name dev-eks-cluster --region us-east-1
+
+# Get node group status
+aws eks describe-nodegroup --cluster-name dev-eks-cluster --nodegroup-name dev-eks-cluster-on-demand --region us-east-1
