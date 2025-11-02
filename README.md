@@ -786,3 +786,7 @@ aws eks describe-cluster --name dev-eks-cluster --region us-east-1
 
 # Get node group status
 aws eks describe-nodegroup --cluster-name dev-eks-cluster --nodegroup-name dev-eks-cluster-on-demand --region us-east-1
+
+# View Terraform state
+terraform state list
+```
