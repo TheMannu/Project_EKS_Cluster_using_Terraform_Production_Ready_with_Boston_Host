@@ -764,3 +764,8 @@ When the command finishes the console shows **0 resources**.
 6. **Multi-AZ Deployment**: High availability across zones
 7. **Encryption**: Enable EBS encryption and TLS
 ---
+
+### **Key Takeaways & Best Practices Highlighted**
+
+1.  **Modularity:** Your use of modules makes the code reusable for different environments (dev, staging, prod).
+2.  **Variable Usage:** Almost every configuration is driven by variables, making the code flexible and easy to configure.
