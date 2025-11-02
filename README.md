@@ -769,3 +769,12 @@ When the command finishes the console shows **0 resources**.
 
 1.  **Modularity:** Your use of modules makes the code reusable for different environments (dev, staging, prod).
 2.  **Variable Usage:** Almost every configuration is driven by variables, making the code flexible and easy to configure.
+3.  **Security First:**
+    *   Private cluster endpoint.
+    *   Worker nodes in private subnets.
+    *   Restrictive security groups.
+    *  **Crucial Point:** Using a specific Jump Server IP in the EKS security group is more secure than `0.0.0.0/0`, even in a private VPC, as it limits access to a single, controlled source.
+4.  **Cost Optimization:** Using Spot Instances for fault-tolerant workloads can drastically reduce costs.
+5.  **State Management:** Using an S3 backend for Terraform state is essential for any team or production use case.
+
+---
