@@ -807,3 +807,10 @@ terraform state list
 | Security | Private API endpoint + security groups | Cluster unreachable from Internet |
 
 ---
+
+## 📊 Technology Stack Explained
+
+### **Terraform**
+- **Infrastructure as Code** tool
+- **Why used**: Declarative configuration, version control, reusable modules
+- **Key features**: State management, dependency resolution, plan/preview/apply workflow
