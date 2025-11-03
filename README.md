@@ -800,3 +800,10 @@ terraform state list
 | Network | AWS VPC, IGW, NAT-GW, RT, SG | Private multi-AZ networking |
 | Compute | Managed Node-Groups (on-demand + spot) | Worker nodes, auto-scaling, cost saving |
 | AuthN | AWS IAM + OIDC provider | Cluster & node permissions, no hard-coded keys |
+| State | S3 + DynamoDB (optional) | Team-safe, locked remote state |
+| CLI | kubectl | Control Kubernetes |
+| Add-ons | VPC-CNI, CoreDNS, kube-proxy, EBS-CSI | Essential cluster services |
+| Cost | Spot instances + right-sizing | ≤ 50 % saving vs on-demand |
+| Security | Private API endpoint + security groups | Cluster unreachable from Internet |
+
+---
