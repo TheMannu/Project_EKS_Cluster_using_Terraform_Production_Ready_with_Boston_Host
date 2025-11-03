@@ -790,3 +790,13 @@ aws eks describe-nodegroup --cluster-name dev-eks-cluster --nodegroup-name dev-e
 # View Terraform state
 terraform state list
 ```
+
+## What You Just Used (Tech Stack Recap)
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| IaaC | Terraform 1.5+ | Build & version infrastructure |
+| Language | HCL | Terraform syntax |
+| Cloud | AWS EKS | Managed Kubernetes control plane |
+| Network | AWS VPC, IGW, NAT-GW, RT, SG | Private multi-AZ networking |
+| Compute | Managed Node-Groups (on-demand + spot) | Worker nodes, auto-scaling, cost saving |
+| AuthN | AWS IAM + OIDC provider | Cluster & node permissions, no hard-coded keys |
