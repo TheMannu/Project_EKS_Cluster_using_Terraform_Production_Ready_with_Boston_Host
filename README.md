@@ -819,3 +819,11 @@ terraform state list
 - **Managed Kubernetes service**
 - **Why used**: No master node management, AWS integration, security
 - **Key features**: Automatic updates, integrated with AWS services,  High availability, security, scalability
+
+### **AWS VPC (Virtual Private Cloud)**
+- **Purpose**: Isolated network environment
+- **Components**:
+  - **Public Subnets**: For resources needing internet access
+  - **Private Subnets**: For worker nodes (no direct internet access)
+  - **NAT Gateway**: Allows private subnets to access internet
+  - **Internet Gateway**: Connects VPC to internet
