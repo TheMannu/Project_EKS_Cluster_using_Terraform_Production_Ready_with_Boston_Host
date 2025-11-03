@@ -814,3 +814,8 @@ terraform state list
 - **Infrastructure as Code** tool
 - **Why used**: Declarative configuration, version control, reusable modules
 - **Key features**: State management, dependency resolution, plan/preview/apply workflow
+
+### **Amazon EKS (Elastic Kubernetes Service)**
+- **Managed Kubernetes service**
+- **Why used**: No master node management, AWS integration, security
+- **Key features**: Automatic updates, integrated with AWS services,  High availability, security, scalability
