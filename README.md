@@ -835,3 +835,7 @@ terraform state list
   - **Roles**: For EKS cluster and worker nodes
   - **Policies**: Permissions for specific AWS services
   - **OIDC**: For service account IAM roles
+
+### **kubectl**
+- **Kubernetes command-line tool**
+- **Why used**: Cluster management, deployment, troubleshooting
