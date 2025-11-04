@@ -862,3 +862,9 @@ Private Subnets
 ```
 
 ---
+
+### **For Viewers Following Along**
+
+*   **Prerequisites are Key:** Ensure `aws-cli`, `terraform`, and `kubectl` are installed and configured correctly before starting.
+*   **Understand the Cost:** Creating these resources (especially NAT Gateways) incurs costs. Always run `terraform destroy` after learning to avoid unexpected bills.
+*   **Terraform Versioning:** The version conflict you encountered is very common. Always check the `required_version` in your Terraform configuration.
