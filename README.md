@@ -827,3 +827,11 @@ terraform state list
   - **Private Subnets**: For worker nodes (no direct internet access)
   - **NAT Gateway**: Allows private subnets to access internet
   - **Internet Gateway**: Connects VPC to internet
+
+### **IAM (Identity and Access Management)**
+- **AWS permission management**
+- **Purpose**: Secure access control, role-based permissions
+- **Components**:
+  - **Roles**: For EKS cluster and worker nodes
+  - **Policies**: Permissions for specific AWS services
+  - **OIDC**: For service account IAM roles
