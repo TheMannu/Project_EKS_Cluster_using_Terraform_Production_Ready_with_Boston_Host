@@ -839,3 +839,7 @@ terraform state list
 ### **kubectl**
 - **Kubernetes command-line tool**
 - **Why used**: Cluster management, deployment, troubleshooting
+
+### **Node Groups**
+- **On-Demand**: Predictable workloads, stable costs
+- **Spot Instances**: Cost-optimized for fault-tolerant workloads
