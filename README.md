@@ -843,3 +843,22 @@ terraform state list
 ### **Node Groups**
 - **On-Demand**: Predictable workloads, stable costs
 - **Spot Instances**: Cost-optimized for fault-tolerant workloads
+
+## 📊 Architecture Overview
+
+```
+Internet
+    |
+Internet Gateway
+    |
+Public Subnets (NAT Gateway)
+    |
+Private Subnets
+    ├── EKS Control Plane
+    ├── On-Demand Worker Nodes
+    └── Spot Worker Nodes
+        ├── Your Applications
+        └── System Pods (CNI, DNS, etc.)
+```
+
+---
