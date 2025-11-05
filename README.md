@@ -868,3 +868,5 @@ Private Subnets
 *   **Prerequisites are Key:** Ensure `aws-cli`, `terraform`, and `kubectl` are installed and configured correctly before starting.
 *   **Understand the Cost:** Creating these resources (especially NAT Gateways) incurs costs. Always run `terraform destroy` after learning to avoid unexpected bills.
 *   **Terraform Versioning:** The version conflict you encountered is very common. Always check the `required_version` in your Terraform configuration.
+*   **Access is the Tricky Part:** As demonstrated, accessing a private cluster requires a Jump Server or AWS Systems Manager (SSM). Your method of using an EC2 instance with the necessary IAM role and tools pre-installed is a classic and effective solution.
+
