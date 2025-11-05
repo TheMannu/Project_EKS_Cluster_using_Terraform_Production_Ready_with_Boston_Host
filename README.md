@@ -881,3 +881,6 @@ After successful deployment:
 5. **Set up backup** strategies for persistent volumes
 
 This implementation provides a **production-ready, secure, and cost-optimized** EKS cluster that follows AWS best practices and can be easily modified for different environments.
+
+## Got Stuck?
+Open an issue in the repo or ping me on [LinkedIn/Ashwani-Kumar](https://www.linkedin.com/in/ashwank/) – happy debugging!
